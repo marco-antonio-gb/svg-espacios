@@ -1,0 +1,174 @@
+:root {
+    --redWfanet: #ff003c;
+    --darkWfanet: #1e1e1e;
+    --red0: #e50914;
+    --red1: #da2037;
+    --red2: #c41d32;
+    --dark-blue0: #2b2d42;
+    --dark-blue1: #242537;
+    --dark-blue2: #14151e;
+    --gray0: #8d99ae;
+    --gray1: #818c9f;
+    --gray2: #747e8f;
+    --white0: #dfe3e8;
+    --white1: #cbcfd3;
+    --white2: #b7babe;
+    --iosBlue: #1a73e8;
+    --iosBlueDark: rgb(10, 132, 255);
+    --iosGreen: rgb(52, 199, 89);
+    --iosGreenDark: rgb(26, 155, 58);
+    --iosIndigo: rgb(88, 86, 214);
+    --iosOrange: rgb(255, 149, 0);
+    --iosPink: rgb(255, 45, 85);
+    --iosPurple: rgb(175, 82, 222);
+    --iosLightGray: rgb(142, 142, 147);
+    --iosDarkGray: rgb(174, 174, 178);
+    --iosLightGray-1: rgb(199, 199, 204);
+    --iosDarkGray-1: rgb(209, 209, 214);
+    --iosLightGray-2: rgb(229, 229, 234);
+    --iosDarkGray-2: rgb(99, 99, 102);
+    --iosLightGray-3: rgb(72, 72, 74);
+    --iosDarkGray-3: rgb(58, 58, 60);
+    --iosLightGray-4: rgb(44, 44, 46);
+    --iosDarkGray-4: rgb(28, 28, 30);
+    --radius0: 0px !important;
+    --radius2: 2px !important;
+    --radius3: 3px !important;
+    --radius4: 4px !important;
+    --radius8: 8px !important;
+    --radius16: 16px !important;
+    --radius20: 20px !important;
+    --radius-login: 8px !important;
+    --radius-card: 8px !important;
+    --radius-button: 8px !important;
+    --radius-input: 8px !important;
+    --radius: 8px !important;
+}
+.backsvg {
+    background: url('../assets/back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.number-off {
+    fill: #fff;
+}
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.cuadro {
+    fill: #fff;
+    stroke-width: 2;
+    stroke: #bec6d0;
+    cursor: pointer;
+    -webkit-transition-duration: 0.1s;
+    /* Safari */
+    transition-duration: 0.1s;
+    transform: scale(1);
+}
+.cuadro:hover {
+    fill: #dfe3e8;
+    cursor: pointer;
+}
+.cuadro-off {
+    fill: var(--iosPink);
+    stroke-width: 0;
+    stroke: #c5ccce;
+    cursor: pointer;
+}
+.reserva_empresa {
+    fill: var(--iosBlue);
+    stroke-width: 0;
+    stroke: var(--iosBlue);
+    cursor: pointer;
+}
+.cuadro,
+.stand {
+    stroke-width: 2;
+    cursor: pointer;
+    -webkit-transition-duration: .1s;
+    transition-duration: .1s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+svg text {
+    fill: #373d42;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    overflow: hidden;
+    pointer-events: none;
+}
+svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+}
+.card-2 {
+    border-radius: 8px;
+    border: 1px solid rgb(204, 204, 204)
+        /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+}
+text {
+    font-size: 0.85rem;
+    font-weight: bold;
+    fill: #5f656e;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+/* svg text {
+    fill: #424242;
+    font-family: Roboto, serif;
+    font-weight: 700;
+    font-size: .85rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    pointer-events: none;
+} */
+.tooltip {
+    display: inline;
+    position: relative;
+}
+.tooltip:hover:after {
+    background: hotpink;
+    background: #8B8386;
+    border-radius: 5px;
+    top: 21px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+    font-family: calibri;
+    font-weight: 700
+}
+.entrada-style{
+    font-size: 1.1rem;
+    fill:#30d158
+}
+.salida-style{
+    font-size: 1.1rem;
+    fill:#ff2d55
+}
