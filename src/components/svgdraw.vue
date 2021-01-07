@@ -10,7 +10,7 @@
             <div>
                 <div class="card mb-2">
                     <div class="card-body">
-                         <h6>1. Configurar parametros del espacio (pabellon/Area)</h6>
+                        <h6>1. Configurar parametros del espacio (pabellon/Area)</h6>
                         <div class="row">
                             <div class="col-sm">
                                 <label for="asdasd">Inicial </label>
@@ -81,7 +81,6 @@
                                 {{this.saveEspacios.entrada}}
                                 <button class="btn btn-sm btn-primary m-1" @click.prevent="editEntrada()">Asignar Entrada</button>
                                 <button class="btn btn-sm btn-primary m-1" @click.prevent="rotarEntrada()">rotar</button>
-                                
                             </div>
                             <div class="col-md-6">
                                 <h6>Salida</h6>
@@ -120,6 +119,7 @@
     </div>
 </div>
 </template>
+
 <script>
 // import {
 //     SVG
@@ -132,18 +132,18 @@ export default {
             step: 1,
             editar: false,
             asignar: false,
-            entrada:false,
-            salida:false,
-            espaciosgenerados:[],
+            entrada: false,
+            salida: false,
+            espaciosgenerados: [],
             saveEspacios: {
-                espaciosGenerados:[],
-                espaciosDeshabilitados:[],
-                espaciosHabilitados:[],
-                espaciosOcultos:[],
-                configuracion:[],
-                semiprivados:[],
-                entrada:{},
-                salida:{}
+                espaciosGenerados: [],
+                espaciosDeshabilitados: [],
+                espaciosHabilitados: [],
+                espaciosOcultos: [],
+                configuracion: [],
+                semiprivados: [],
+                entrada: {},
+                salida: {}
             },
             settings: {
                 area: 'B',
@@ -178,27 +178,27 @@ export default {
         selectespacio
     ],
     methods: {
-        generarLayout(){
-            if(this.settings.area===''){
+        generarLayout() {
+            if (this.settings.area === '') {
                 alert("INGRESE LA INICIAL")
-            }else if(this.settings.area_nombre===''){
+            } else if (this.settings.area_nombre === '') {
                 alert("INGRESE EL NOMBRE DEL AREA")
-            }else if(this.settings.precio_stand===0){
+            } else if (this.settings.precio_stand === 0) {
                 alert("INGRESE EL PRECIO DE LOS STANDS")
-            }else if(this.settings.precio_sp===0){
+            } else if (this.settings.precio_sp === 0) {
                 alert("INGRESE EL PRECIO DE LOS STANDS SP")
-            }else if(this.settings.credenciales===0){
+            } else if (this.settings.credenciales === 0) {
                 alert("INGRESE CANTIDAD DE CREDENCIALES")
-            }else if(this.settings.credenciales_sp===0){
+            } else if (this.settings.credenciales_sp === 0) {
                 alert("INGRESE CANTIDAD DE CREDENCIALES SP")
-            }else{
+            } else {
                 this.generarEspacios()
             }
         },
         submit() {
-            this.saveEspacios.configuracion=this.settings;
-            this.saveEspacios.espaciosOcultos=this.hiddenSP;
-            localStorage.setItem('espaciosSVG',JSON.stringify(this.saveEspacios));
+            this.saveEspacios.configuracion = this.settings;
+            this.saveEspacios.espaciosOcultos = this.hiddenSP;
+            localStorage.setItem('espaciosSVG', JSON.stringify(this.saveEspacios));
         },
     },
     async mounted() {

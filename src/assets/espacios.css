@@ -45,7 +45,7 @@
     --radius: 8px !important;
 }
 .backsvg {
-    background: url('../assets/back.jpg');
+    /* background: url('../assets/back.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -75,10 +75,18 @@
     transition-duration: 0.1s;
     transform: scale(1);
 }
+.cuadro-disable {
+    stroke: #e0e0e0;
+}
 .cuadro:hover {
     fill: #dfe3e8;
     cursor: pointer;
 }
+.cuadro-disable:hover {
+    fill: #e4e9f0;
+    cursor: pointer;
+}
+
 .cuadro-off {
     fill: var(--iosPink);
     stroke-width: 0;
@@ -171,4 +179,10 @@ text {
 .salida-style{
     font-size: 1.1rem;
     fill:#ff2d55
+}
+.number{
+    fill: black;
+}
+.number-disable{
+    fill: darkgray;
 }

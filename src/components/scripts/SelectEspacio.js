@@ -86,7 +86,11 @@ export default {
 					} else {
 						this.saveEspacios.espaciosDeshabilitados.push(ar);
 					}
-					group.setAttribute("visibility", "hidden");
+					// group.setAttribute("visibility", "hidden");
+					rect.classList.remove("cuadro");
+					rect.classList.add("cuadro-disable");
+					texto.classList.remove("number");
+					texto.classList.add("number-disable");
 				} else {
 					alert("Espacio seleccionado no valido");
 				}
