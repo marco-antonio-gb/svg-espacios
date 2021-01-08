@@ -74,7 +74,7 @@ export default {
 						.addClass("cuadro");
 					var text = draw
 						// .plain(`${counter}`)
-						.plain("*")
+						.plain(" ")
 						.attr({
 							x:
 								newX +

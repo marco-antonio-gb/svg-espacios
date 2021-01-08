@@ -76,10 +76,11 @@
     transform: scale(1);
 }
 .cuadro-disable {
-    stroke: #e0e0e0;
+    stroke: #ebebeb;
+    fill: #fff;
 }
 .cuadro:hover {
-    fill: #dfe3e8;
+    fill: #e2e8ea;
     cursor: pointer;
 }
 .cuadro-disable:hover {

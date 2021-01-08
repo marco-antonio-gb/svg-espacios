@@ -4,9 +4,9 @@ export default {
 		clicksvg(event) {
 			var rect = event.target;
 			const texto = rect.nextElementSibling;
-			var attrX = rect.getAttribute("x");
-			var attrY = rect.getAttribute("y");
-			console.log(attrX + "-" + attrY);
+			// var attrX = rect.getAttribute("x");
+			// var attrY = rect.getAttribute("y");
+
 			// const StandClass = rect.getAttribute("class");
 			// const StandId = rect.getAttribute("id");
 			if (event.path) {
@@ -72,25 +72,28 @@ export default {
 						type: "stand"
 					};
 
-					const result = this.saveEspacios.espaciosHabilitados.find(
+					const result = this.saveEspacios.espaciosDeshabilitados.find(
 						elem => elem.id === groupid
 					);
-					// console.log(result);
 					if (result) {
-						this.saveEspacios.espaciosHabilitados.splice(
-							this.saveEspacios.espaciosHabilitados.indexOf(
+						this.saveEspacios.espaciosDeshabilitados.splice(
+							this.saveEspacios.espaciosDeshabilitados.indexOf(
 								result
 							),
 							1
 						);
+						rect.classList.remove("cuadro-disable");
+						rect.classList.add("cuadro");
+						texto.classList.remove("number-disable");
+						texto.classList.add("number");
 					} else {
 						this.saveEspacios.espaciosDeshabilitados.push(ar);
+						rect.classList.remove("cuadro");
+						rect.classList.add("cuadro-disable");
+						texto.classList.remove("number");
+						texto.classList.add("number-disable");
 					}
 					// group.setAttribute("visibility", "hidden");
-					rect.classList.remove("cuadro");
-					rect.classList.add("cuadro-disable");
-					texto.classList.remove("number");
-					texto.classList.add("number-disable");
 				} else {
 					alert("Espacio seleccionado no valido");
 				}

@@ -49,25 +49,29 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <h6>2. Configurar distribucion de espacios</h6>
-                                <ul class="  p-0 m-0">
+                                <!-- <pre>{{saveEspacios.espaciosDeshabilitados}}</pre> -->
+                                <!-- <ul class="  p-0 m-0">
                                     <li v-for="item in saveEspacios.espaciosDeshabilitados" :key="item.id" class="  pl-2 p-0 m-0">
                                         <a href="javascript:void(0)" @click.prevent="restaurarEspacio(item.id)"> Espacio {{item.number}}
                                             <span class="badge badge-danger"> X </span>
                                         </a>
                                     </li>
-                                </ul>
+                                </ul> -->
                                 <button class="btn btn-sm btn-primary m-1" @click.prevent="editSpace">Editar Espacios</button>
                             </div>
                             <div class="col-md-6">
                                 <h6>3. Asignar numeracion a los espacios</h6>
-                                <ul class="m-0 p-0">
+                               <!-- <pre>
+                                   {{saveEspacios.espaciosHabilitados}}
+                               </pre> -->
+                                <!-- <ul class="m-0 p-0">
                                     <li v-for="espacio in saveEspacios.espaciosHabilitados" :key="espacio.id" class="pl-2 p-0 m-0">
                                         <div class="d-flex justify-content-between">
                                             <div class=" ">Stand: <strong>{{espacio.number}} - {{espacio.area}}</strong>, {{espacio.enabled}}</div>
                                             <div class=" "><button class="btn btn-sm btn-primary" @click="editarEspacio(espacio)">Editar</button></div>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul> -->
                                 <button class="btn btn-sm btn-primary m-1" @click.prevent="AsignNumber">Asignar Numeracion</button>
                             </div>
                         </div>
