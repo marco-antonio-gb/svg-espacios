@@ -43,12 +43,18 @@
     --radius-button: 8px !important;
     --radius-input: 8px !important;
     --radius: 8px !important;
+    --materialCard1: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
 }
-.backsvg {
-    /* background: url('../assets/back.jpg'); */
-    background-size: cover;
+ 
+.backsvg_conf {
+    background:url('../assets/back_quir.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover;
+}
+.backsvg_conf_b {
+    background:url('../assets/back_conf_b.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .left {
     float: left;
@@ -75,9 +81,12 @@
     transition-duration: 0.1s;
     transform: scale(1);
 }
+.card{
+    box-shadow: var(--materialCard1);
+}
 .cuadro-disable {
-    stroke: #ebebeb;
-    fill: #fff;
+    stroke: #f4f4f4;
+    fill: #f4f4f4;
 }
 .cuadro:hover {
     fill: #e2e8ea;

@@ -3,62 +3,37 @@
     <div class="row">
         <div class="col-md-6">
             <div class="pl-5 pr-5">
-                <div id="espacioSVG" class="card-2   backsvg_conf_b" @click="clicksvg"></div>
+                <div id="espacioSVG" class="card-2   backsvg_conf" @click="clicksvg"></div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card mb-2">
-                <div class="card-body">
-                    <ul class="list-group" v-if="pabellones_arr.lenght>0">
-                        <li class="list-group-item" v-for="pabe in pabellones_arr" :key="pabe.id">{{pabe.nombre}}</li>
-                    </ul>
-                    <!-- <span v-else>No existen registros</span> -->
-                </div>
-            </div>
-            <div class="card mb-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <label for="">Nombre</label>
-                            <input type="text" class="form-control" placeholder="Nombre" v-model="pabellon.nombre">
-                        </div>
-                        <div class="col">
-                            <label for="">Inicial</label>
-                            <input type="text" class="form-control" placeholder="Inicial" v-model="pabellon.area">
-                        </div>
-                    </div>
-                    <div class="mt-2">
-                        <button type="submit" class="btn btn-primary" @click.prevent="addLayout()">Generar Layout</button>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="card mb-2">
                         <div class="card-body">
                             <h6>1. Configurar parametros del espacio (pabellon/Area)</h6>
                             <div class="col-sm">
-                                <label for="">Inicial </label>
+                                <label for="asdasd">Inicial </label>
                                 <input type="text" class="form-control form-control-sm" v-model="settings.area">
                             </div>
                             <div class="col-sm">
-                                <label for="">Nombre </label>
+                                <label for="asdasd">Nombre </label>
                                 <input type="text" class="form-control form-control-sm" v-model="settings.area_nombre">
                             </div>
                             <div class="col-sm">
-                                <label for="">Precio Stand</label>
+                                <label for="asdasd">Precio Stand</label>
                                 <input type="text" class="form-control form-control-sm" v-model="settings.precio_stand">
                             </div>
                             <div class="col-sm">
-                                <label for="">Precio SP</label>
+                                <label for="asdasd">Precio SP</label>
                                 <input type="text" class="form-control form-control-sm" v-model="settings.precio_sp">
                             </div>
                             <div class="col-sm">
-                                <label for="">Credenciales Stand</label>
+                                <label for="asdasd">Credenciales Stand</label>
                                 <input type="text" class="form-control form-control-sm" v-model="settings.credenciales">
                             </div>
                             <div class="col-sm">
-                                <label for="">Credenciales SP</label>
+                                <label for="asdasd">Credenciales SP</label>
                                 <input type="text" class="form-control form-control-sm" v-model="settings.credenciales_sp">
                             </div>
                             <div class="text-center p-2">
@@ -103,7 +78,7 @@
                     </div>
                     <div class="card mb-2">
                         <div class="card-body">
-                            <div>
+                            <div >
                                 <div class="p-2">
                                     <h6>Entrada</h6>
                                     {{this.saveEspacios.entrada}}
@@ -120,7 +95,6 @@
                     </div>
                 </div>
             </div>
-            <pre>{{pabellones_arr}}</pre>
             <div class="p-1 alert-primary" role="alert" v-if="editar">
                 <strong>Editar Layout pabellon {{settings.area}}</strong> <br>
                 <small>Seleccione los espacios que seran deshabilitados o que formaran parte de los pasillos.</small>
@@ -149,12 +123,11 @@
     </div>
 </div>
 </template>
-
 <script>
 // import {
 //     SVG
 // } from "@svgdotjs/svg.js";
-import scripts from './scripts/espacios';
+import scripts from './scripts/espacios_config';
 import selectespacio from './scripts/SelectEspacio';
 export default {
     data() {
@@ -175,11 +148,6 @@ export default {
                 entrada: {},
                 salida: {}
             },
-            pabellon: {
-                nombre: "",
-                area: "",
-            },
-            pabellones_arr: [],
             settings: {
                 area: 'B',
                 area_nombre: 'Parihuana',
@@ -193,7 +161,7 @@ export default {
                 stand_w: 47,
                 stand_h: 47,
                 columns: 11,
-                rows: 14,
+                rows: 17,
                 padding: 8,
                 radius: 8,
                 stroke: 2,
@@ -205,7 +173,8 @@ export default {
             },
             // disables: [],
             disablesArr: [],
-            hiddenSP: [1, 2, 12, 13, 10, 11, 21, 22, 133, 134, 144, 145, 142, 143, 153, 154, 23, 34, 45, 56, 67, 78, 89, 100, 111, 122, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132]
+            // hiddenSP:[]
+            hiddenSP: [3,4,5,6,7,8,9,14,15,16,17,18,19,20,1, 2, 12, 13, 10, 11, 21, 22, 133,  144, 143,  154, 23, 34, 45, 56, 67, 78, 89, 100, 111, 122, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132 ,101,102,112,113,155,177,166,165,176,187,123,124,134,135,145,146,156,157,167,168,178,179,141,142,152,153,163,164,174,175,185,186,126,127,128,137,138,139,148,149,150,159,160,161,170,171,172,181,182,183,125,136,90,91]
         }
     },
     mixins: [
@@ -213,10 +182,6 @@ export default {
         selectespacio
     ],
     methods: {
-        addLayout(){
-            this.pabellones_arr.push(this.pabellon);
-            console.log(this.pabellones_arr)
-        },
         generarLayout() {
             if (this.settings.area === '') {
                 alert("INGRESE LA INICIAL")
@@ -231,7 +196,7 @@ export default {
             } else if (this.settings.credenciales_sp === 0) {
                 alert("INGRESE CANTIDAD DE CREDENCIALES SP")
             } else {
-                this.generarEspacios()
+                this.configInit()
             }
         },
         submit() {
@@ -241,7 +206,8 @@ export default {
         },
     },
     async mounted() {
-        console.clear()
+        console.clear();
+        this.generarEspacios(); 
     },
 }
 </script>

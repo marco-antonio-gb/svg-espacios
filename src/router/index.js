@@ -17,6 +17,12 @@ const routes = [
 		component: function() {
 			return import(/* webpackChunkName: "about" */ "../components/LoadDraw.vue");
 		}
+	},
+	{
+		path: "/config",
+		component: function() {
+			return import(/* webpackChunkName: "config" */ "../components/config.vue");
+		}
 	}
 ];
 
